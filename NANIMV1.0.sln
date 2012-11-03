@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NANIMV1.0", "NANIMV1.0.vcxproj", "{998C40B9-DCD3-4F23-BF51-9D0D87026DD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{998C40B9-DCD3-4F23-BF51-9D0D87026DD2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{998C40B9-DCD3-4F23-BF51-9D0D87026DD2}.Debug|Win32.Build.0 = Debug|Win32
+		{998C40B9-DCD3-4F23-BF51-9D0D87026DD2}.Release|Win32.ActiveCfg = Release|Win32
+		{998C40B9-DCD3-4F23-BF51-9D0D87026DD2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

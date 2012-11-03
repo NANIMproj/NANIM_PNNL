@@ -1,0 +1,7 @@
+
+
+Ti temp factor is 0.519 and 0.510 for rutile and anatase, respectively.
+
+O temp factor is 0.785 and 0.664 for rutile and anatase, respectively.
+
+Source: Cromer, D. T. Herrington, K. J. Am. Chem. Soc. 77. 1955. 4708-4709.

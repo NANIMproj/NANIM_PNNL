@@ -1,0 +1,48 @@
+NUM_RUNS 1
+
+---TEXT_REPLACE_SEQ---
+Rotate 000.0 0.0 45.0
+FPValsChange 2.0 0.0 0.0
+
+---TEXT_//REPLACE_SEQ---
+Quilt -3 -3 -3
+IValsChange 2 2 2
+
+---TEXT_REPLACE_SEQ---
+Name Rot_01
+IValChange 1
+
+---TEXT_REPLACE_SEQ---
+Name PbS_COMP_CUBIC_01
+IValChange 1
+
+---TEXT_REPLACE_SEQ---
+PosGOGO 01.60 01.60 01.60
+FPValsChange 0.08 0.08 0.08 
+
+---TEXT_REPLACE_SEQ---
+SizeGOGO 03.20 03.20 03.20
+FPValsChange 0.16 0.16 0.16
+
+---TEXT_RE//PLACE_SEQ---
+RadiusGOGO 0.165
+FPValChange 0.165
+
+---TEXT_REPLACE_SEQ---
+RadiusGOGO 0.077
+FPValChange 0.077
+
+---TEXT_REPLACE_SEQ---
+File PbS_COMP_CUBIC_01.cop
+IValChange 1
+
+---TEXT_REPLACE_SEQ---
+PbS_COMP_CUBIC_01.gin
+IValChange 1
+
+---TEXT_REPLACE_SEQ---
+PbS_COMP_CUBIC_01.cop
+IValChange 1
+
+
+

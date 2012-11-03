@@ -1,0 +1,214 @@
+Add PbS_Part 3.0 3.0 3.0
+Name Water_Test
+Size 2.79394 2.79394 2.79394
+Periodicity 3
+Solvate Water 0.31044 0.31044 0.31044
+Box Position 0.0 0.0 0.0
+Box Size 2.79394 2.79394 2.79394
+Dis Pam 0.4
+
+
+
+Name Grain
+Size 10.0 10.0 2.2
+Periodicity 3
+Add CeO2_Slab1 0.0 0.0 0.1
+Sub CeO2_Slab2 5.0 0.0 0.1
+ChargeBal
+Box Position 0.0 0.0 0.1
+Box Size 10.0 10.0 1.5
+
+Add Window3 0.0 0.0 0.0
+Sub TiO2_Part 2.0 2.0 2.0
+
+
+Add TiO2_Part 2.0 2.0 2.0
+Add TiO2_Part 2.0 2.0 5.0
+Solvate Water 0.31 0.31 0.31
+Box Position 0.0 0.0 0.0
+Box Size 5.0 5.0 7.0
+Dis Pam 0.4
+
+Name FS_GOLDSAM
+Size 2.0 2.0 20.0
+Period 3
+Add Window2 0.0 0.0 0.0
+Add Window2 0.0 0.0 15.0
+Add Part 1.0 1.0 14.0
+Solvate Water 0.31 0.31 0.31
+Box Position 0.0 0.0 5.0
+Box Size 2.0 2.0 10.0
+Dis Pam 0.4
+//
+Size 6.0 6.0 150.0
+Period 3
+Add Window2 0.0 0.0 0.0
+Add Window2 0.0 0.0 100.0
+Add SuperBad2 3.0 3.0 98.0
+Solvate Water 0.31 0.31 0.31
+Box Position 0.0 0.0 50.0
+Box Size 6.0 6.0 50.0
+Dis Pam 0.4
+
+//My List of Atoms
+
+---Define // NanoParticle---
+Name SuperBad2
+Structure LeadSulfide
+Radius 2.0
+Model SPH
+BasisAdd PARTIAL
+
+---Defi//ne NanoParticle---
+Name TiO2_Part
+Structure Titania
+Radius 2.1
+Model SPH
+BasisAdd PARTIAL
+
+---Defin//e NanoParticle---
+Name PbS_Facet
+Structure LeadSulfide
+Radius 1.0
+Model CRYST
+BasisAdd PARTIAL
+NeutralizeParticle YES
+
+---Define// NanoParticle---
+Name HeavensKiss
+Structure GoldAmor
+Radius 2.3
+Model CON
+BasisAdd PARTIAL
+Coat Alkthi_Mol 0.265 0.4648
+Mode BIND
+
+---Define// NanoParticle---
+Name Part
+Structure GoldCryst
+Radius 1.0
+Model SPH
+BasisAdd PARTIAL
+
+C//oat Alkthi_Mol 0.265 0.4648
+Mode FREE
+
+
+//Area of hexagonal unit cell = sin(60) * vector length * vector length = 0.866025 * square vector length
+//Distance value is multipled by 1/0.866025 in the program for hexagonal placement
+
+---Define //NanoSurface---
+Name Window3
+Structure SiN
+SizeX 4.0
+SizeY 4.0
+SizeZ 4.0
+FaceIndexX 1
+FaceIndexY 0
+FaceIndexZ 0
+BasisAdd PARTIAL
+
+---Defin//e NanoSurface---
+Name CeO2_Slab1
+Structure Ceria
+SizeX 2.75
+SizeY 4.0
+SizeZ 1.0
+FaceIndexX 0
+FaceIndexY 0
+FaceIndexZ 1
+Rotate 79.85
+BasisAdd PARTIAL
+VariableSize YES
+
+---Defin//e NanoSurface---
+Name CeO2_Slab2
+Structure Ceria
+SizeX 2.75
+SizeY 4.0
+SizeZ 1.0
+FaceIndexX 0
+FaceIndexY 0
+FaceIndexZ 1
+Rotate 19.85
+BasisAdd PARTIAL
+VariableSize YES
+
+
+---Loa//d NanoSurface---
+Name Window2
+File Window2.nns
+
+---Define Molecule---
+Name Water
+Add O 0.0 0.0 0.0
+Add H 0.0816 0.0577 0.0
+Add H -0.0816 0.0577 0.0
+
+
+---Define Molecule---
+Name Alkthi_Mol
+Add Alkanethiol
+Methyl Count 5
+Atoms S C1 C2 H
+
+---Load Molecule---
+Name NEWPART
+File TEST2_ZAZA.mol
+
+
+
+Name Smile_Face_For_Ping
+Size 8.0 8.0 8.0
+Period 3
+Add CopperParticle 1.5 7.5 7.0
+Add CopperParticle 8.5 7.5 7.0
+Add CopperParticle 2.75 6.75 8.5
+Add CopperParticle 7.25 6.75 8.5
+Add CopperParticle 4.0 6.0 10.0
+Add CopperParticle 6.0 6.0 10.0 
+Add GoldParticle 3.0 7.0 0.0
+Add GoldParticle 7.0 7.0 0.0
+Add SilverSlabber  4.0 4.0 4.0
+
+Make Composite
+Name CoolWorldHunny
+Size 8.0 8.0 8.0
+Period 3
+Add SiN 0.0 0.0 0.0
+Size 2 2 2
+
+Add Amor_Surface 0.0 0.0 6.0 
+Add Pt 1.0 1.0 3.07
+Add Pt 2.0 2.0 3.07
+Solvate Hydrogen_Gas 0.5 0.5 0.5
+Box Position 1.0 1.0 8.0
+Box Size 2.0 2.0 2.0
+Min Dist 0.4
+
+
+Define NanoSurface
+Name SAM_Surface
+Structure GoldCryst
+SizeX 2.0
+SizeY 2.0
+SizeZ 2.0
+FaceIndexX 1
+FaceIndexY 1
+FaceIndexZ 1
+BasisAdd Partial
+Coat Alkthi_Mol 0.265 0.7 0.7
+Type BIND
+BasisAdd PARTIAL
+
+
+
+CPP Oct
+
+Define Structure
+Name GoldAmor
+Struct AMOR
+MeshPamA 0.287
+MeshPamB 0.00
+Atom Au
+

@@ -1,0 +1,360 @@
+//Used commmands---
+
+GULPOPTI QSTEMDWF IMAGEDWF NOHYDRO ELECOMP  QCONF
+
+//Unused commands (not complete list)---
+
+FILE//DUMP TRAJ//DWF XR//DCALC CLEAN//UP GULP//MELT ANI_CORE//SHELL ANA//LYSIS NORA//DIAL SHOW//ENERGY ST//RANGE COOR//COUNT ELECTR//OPOT CLEAN//ANAL Q//PBS
+
+//Image analysis---
+
+---Read Image---
+File 41_def
+Source 0.1
+Stats 5
+Restrict 2
+Line 0 0 1
+//ShowNum
+
+//MD and image run file parameters---
+
+Microscope Parameters
+Mode STEM
+Nx 1
+Ny 1
+Nz 1
+Tx 0.0
+Ty 0.0
+Tz 0.0
+ScanXMin 3.5
+ScanXMax 4.5
+ScanYMin 3.5
+ScanYMax 4.5
+RasterX 0.05
+RasterY 0.05
+WindowSizeX 1.0
+WindowSizeY 1.0
+ResolutionX 0.005
+ResolutionY 0.005
+Voltage 200
+Current 30
+Dwell 2
+SourceAngle 0.1
+SourceSize 0.1
+BeamTiltX 0.0
+BeamTiltY 0.0
+ConvAngle 30.0
+DetectorIAngle 100.00
+DetectorOAngle 167.20
+Cs3 0.01
+Cs5 3.2
+Defocus -9.0
+Cc 1.8
+dE 1.6
+2Astig 0
+Angle 0
+3Astig 0
+Angle 0
+Temp 295.15
+TDS 10
+SliceOut 68
+
+MD Parameters
+dt 0.2
+T0 298.0
+Tf 298.0
+T0_t 0.0
+Tf_t 0.0
+NPT
+Thermostat 0.05
+Barostat 0.05
+Equi 100.0
+Prod 0.0
+Show 0.1
+File 1.0
+
+
+//Loading components of the system---
+//Two options: loading from file or making them right here
+
+
+---Load NanoSurface---
+Name Window8850n10rUNOYAY
+File Window8850n10rUNOYAY.nns
+
+---Load NanoSurface---
+Name Window8850n10rDOSYAY
+File Window8850n10rDOSYAY.nns
+
+
+---Load NanoSurface---
+Name Water_Box8850n10r
+File Water_Box8850n10r.nns
+
+---Convert File---
+PbS_COMP_SPHERE_18.gin
+PbS_COMP_SPHERE_18.cop
+
+---Load Composite---
+Name SUPER_PARTICLE
+File PbS_COMP_SPHERE_18.cop
+PosGOGO 4.0 4.0 5.0
+Coordex 0.0 0.335
+Rotate 45.0 90.0 0.0
+
+---Define// NanoParticle---
+Name PbS_Part
+Structure LeadSulfide
+Radius 2.5
+Model SPH
+BasisAdd PARTIAL
+NeutralizeParticle YES
+
+//Final composition creation---
+
+---Make Composite---
+Name TEST_SYSTEM
+Size 8.0 8.0 10.0
+Periodicity 0
+//Inv Water_Box8850n10r 0.0 0.0 50.0
+//Add Window8850n10rUNOYAY 0.0 0.0 0.0
+//Add Window8850n10rDOSYAY 0.0 0.0 100.0
+
+//Atom definitions---
+
+
+---Define Atom---
+Name Hydrogen
+Symbol H
+AN 1
+AW 1.01
+CH 0.41
+RA 0.00
+
+---Define Atom---
+Name Carbon
+Symbol C
+AN 6
+AW 12.01
+CH 0.00
+RA 1.00
+
+---Define Atom---
+Name Nitrogen
+Symbol N
+AN 7
+AW 14.01
+CH -0.7875
+RA 1.00
+
+---Define Atom---
+Name Oxygen
+Symbol O
+AN 8
+AW 16.00
+CH 0.00
+RA 1.3
+//General oxygen atom.
+
+---Define Atom---
+Name Oxygen
+Symbol O1
+AN 8
+AW 16.00
+CH -1.098
+RA 1.3
+//Rutile-anatase average value
+
+---Define Atom---
+Name OxygenW
+Symbol O2
+AN 8
+AW 16.00
+CH -0.82
+RA 1.3
+//Water oxygen atom
+
+---Define Atom---
+Name Sodium
+Symbol Na
+AN 11
+AW 22.9898
+CH 1.000
+RA 1.1
+
+---Define Atom---
+Name Magnesium
+Symbol Mg
+AN 12
+AW 24.31
+CH 2.00
+RA 1.10
+
+---Define Atom---
+Name Silicon
+Symbol Si
+AN 14
+AW 28.09
+CH 1.05
+RA 0.9
+
+---Define Atom---
+Name Sulfur
+Symbol S
+AN 16
+AW 32.07
+CH -1.752824
+RA 1.4
+//-1.752824
+
+---Define Atom---
+Name Chlorine
+Symbol Cl
+AN 17
+AW 35.45
+CH -1.000
+RA 1.7
+
+---Define Atom---
+Name Potassium
+Symbol K
+AN 19
+AW 39.0983
+CH 1.000
+RA 1.5
+
+---Define Atom---
+Name Titania
+Symbol Ti
+AN 22
+AW 47.88
+CH 2.196
+RA 0.7
+//Rutile-anatase average value
+
+---Define Atom---
+Name Iron
+Symbol Fe
+AN 26
+AW 55.85
+CH 0.00
+RA 1.2
+
+---Define Atom---
+Name Copper
+Symbol Cu
+AN 30
+AW 63.55
+CH 0.000
+RA 1.52
+
+---Define Atom---
+Name Cerium
+Symbol Ce
+AN 58
+AW 140.1
+CH 4.000
+RA 0.79
+
+---Define Atom---
+Name Platinum
+Symbol Pt
+AN 78
+AW 195.08
+CH 0.00
+RA 1.50
+
+---Define Atom---
+Name Gold
+Symbol Au
+AN 79
+AW 196.97
+CH 0.000
+RA 1.50
+
+---Define Atom---
+Name Lead
+Symbol Pb
+AN 82
+AW 207.20
+CH 1.752824
+RA 1.2
+
+//Structure definitions---
+
+//Crystal System
+//Structs - FCC BCC SC CUBIC TETRA ORTHO MONO
+
+---Define Structure---
+Name TitaniaANATASE
+Struct TETRA
+LatticePam1 0.37850
+LatticePam2 0.95140
+AtomR Ti 0.0 0.75 0.125
+AtomR Ti 0.0 0.25 0.875
+AtomR Ti 0.5 0.75 0.375
+AtomR Ti 0.5 0.25 0.625
+AtomR O1 0.0 0.25 0.08160
+AtomR O1 0.0 0.75 0.91840
+AtomR O1 0.0 0.75 0.33160
+AtomR O1 0.5 0.75 0.58160
+AtomR O1 0.5 0.25 0.83160
+AtomR O1 0.5 0.75 0.16840
+AtomR O1 0.5 0.25 0.41840
+AtomR O1 0.0 0.25 0.66840
+Facet Cubic
+
+---Define Structure---
+Name LeadSulfide
+Struct CUBIC
+LatticePam1 0.5936
+AtomR Pb 0.00 0.00 0.00
+AtomR Pb 0.50 0.50 0.00
+AtomR Pb 0.50 0.00 0.50
+AtomR Pb 0.00 0.50 0.50
+AtomR S 0.00 0.50 0.00
+AtomR S 0.50 0.00 0.00
+AtomR S 0.00 0.00 0.50
+AtomR S 0.50 0.50 0.50
+Facet Finger
+Scale 1.0
+
+---Define Structure---
+Name SiN
+Struct HEX
+LatticePam1 0.7766
+LatticePam2 0.5615
+AtomR N 0.0 0.0 0.0
+AtomR N 0.0 0.0 0.5000
+AtomR N 0.3333 0.6666 0.7500
+AtomR N 0.6666 0.3333 1.2500
+AtomR N 0.33333 0 0
+AtomR N 0 0.33333 0
+AtomR N -0.33333 -0.33333 0
+AtomR N 0 0.33333 0.5
+AtomR N -0.33333 -0.33333 0.5
+AtomR N 0.33333 0 0.5
+AtomR N 0.33333 0.33333 0.25
+AtomR N -0.33333 0 0.25
+AtomR N 0 -0.33333 0.25
+AtomR N 0.33333 0.33333 0.75
+AtomR N -0.33333 0 0.75
+AtomR N 0 -0.33333 0.75
+AtomR Si 0.5 0.0833333 0.25
+AtomR Si -0.0833333 0.416667 0.25
+AtomR Si -0.416667 -0.5 0.25
+AtomR Si 0.0833333 0.5 0.75
+AtomR Si -0.5 -0.416667 0.75
+AtomR Si 0.416667 -0.0833333 0.75
+AtomR Si 0.166667 0.25 0
+AtomR Si -0.25 -0.0833333 0
+AtomR Si 0.0833333 -0.166667 0
+AtomR Si 0.25 0.166667 0.5
+AtomR Si -0.166667 0.0833333 0.5
+AtomR Si -0.0833333 -0.25 0.5
+
+
+#####
+
+
+Good food equals good sleep
